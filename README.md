@@ -33,3 +33,10 @@ curl -s --user 'api:YOUR_API_KEY' \
     -F action='forward("YOUR_APP_DOMAIN_HERE")' \
     -F action='stop()'
 ```
+
+
+### License
+
+This code is licensed under the MIT License.
+
+Copyright (c) 2016 Jon Moss
