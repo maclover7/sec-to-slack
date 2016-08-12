@@ -34,6 +34,14 @@ curl -s --user 'api:YOUR_API_KEY' \
     -F action='stop()'
 ```
 
+To register for a Google Group mailing list, you can use the following
+link (be sure to change out the mailing list name, as well as the email
+being registered):
+
+http://groups.google.com/group/testlist123/boxsubscribe?email=test@test.com
+
+All email body contents are logged to the console, so you should be able
+to look in the logs and copy and paste in the confirmation URL.
 
 ### License
 

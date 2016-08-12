@@ -6,9 +6,9 @@ Slack.configure do |config|
 end
 
 module SecToSlack
-  SEC_LISTS = ([
-    'rubyonrails-security@googlegroups.com'
-  ] + ENV['SEC_LISTS']).freeze
+  SEC_LISTS = (
+    ['rubyonrails-security@googlegroups.com'] + (ENV['SEC_LISTS'] || [])
+  ).freeze
 
   class Application < Sinatra::Base
     post '/' do
@@ -23,6 +23,9 @@ module SecToSlack
     end
 
     def run
+      puts "Email received from #{@email['From']}"
+      puts "Email body: #{@email["body-plain"]}"
+
       lists = (SEC_LISTS & @email['To'].split(', '))
       return unless lists.any?
 
