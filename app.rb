@@ -11,6 +11,10 @@ module SecToSlack
   ).freeze
 
   class Application < Sinatra::Base
+    get '/' do
+      'Hello World'
+    end
+
     post '/' do
       EmailProcessor.new(params).run
       status 200
